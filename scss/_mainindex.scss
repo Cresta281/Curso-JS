@@ -1,0 +1,60 @@
+.enunciado {
+    position: relative;
+    img{
+    width: 100%;
+    height: 400px;
+    }
+    h1 {
+        font-size: 23px;
+        position: absolute;
+        top: 10%;
+        margin: 0px 20px auto;
+        color: $blanco;
+    }
+    span {
+        font-size: 23px;
+        background-color: $secundario;
+        color: $primario;
+        a {
+            @include links;
+        }
+    }
+}
+.preguntas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .preguntas_contenido {
+        position: relative;
+        span {
+            font-size: 19px;
+            background-color: $secundario;
+            color: $primario;
+            position: absolute;
+            bottom: 15%;
+            left: 7%;
+        }
+        img {
+            width: 90%;
+            height: 400px;
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+    }
+}
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        margin: 1rem 1rem;
+    }
+    p {
+        margin: 1rem 1rem;
+        border-bottom: solid $secundario;
+        border-top: solid $primario;
+    }
+    button {
+        @include botonmobile;
+        margin: 1rem 1rem;
+    }
+}

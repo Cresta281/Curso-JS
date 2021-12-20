@@ -1,0 +1,11 @@
+.navbar {
+    @include links;
+    .navbar_container {
+        background-color: $blanco;
+        color: $primario;
+        img {
+            max-width: 58%;
+            
+        } 
+    }
+}

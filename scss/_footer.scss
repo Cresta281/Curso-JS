@@ -1,0 +1,38 @@
+.footer{
+    background-color: $primario;
+    .footer_logo {
+        img {
+            width: 33%;
+            margin: 1rem 1rem;
+        }
+        a {
+            @include links;
+            
+        }
+    }
+    .footer_logo_abajo {
+        margin-left: 7rem;
+        a {
+            @include links;
+        }
+    }
+    .footer_redes {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer_info {
+        margin-top: 1rem;
+        text-align: center;
+        h2 {
+            color: $blanco;
+            font-size: 14px;
+        }
+        span {
+            color: $secundario;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+}
