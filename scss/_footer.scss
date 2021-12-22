@@ -2,18 +2,22 @@
     background-color: $primario;
     .footer_logo {
         img {
-            width: 33%;
+            width: 23%;
             margin: 1rem 1rem;
         }
         a {
             @include links;
+            font-size: 2.5rem;
+            margin: 1rem;
             
         }
     }
     .footer_logo_abajo {
-        margin-left: 7rem;
+        text-align: center;
         a {
             @include links;
+            font-size: 2.5rem;
+            margin: 1rem;
         }
     }
     .footer_redes {
@@ -21,17 +25,21 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        .footer_redes_svc {
+            width: 8%;
+            height: 8%;
+        }
     }
     .footer_info {
         margin-top: 1rem;
         text-align: center;
         h2 {
             color: $blanco;
-            font-size: 14px;
+            font-size: 1.5rem;
         }
         span {
             color: $secundario;
-            font-size: 14px;
+            font-size: 1.5rem;
             font-weight: bold;
         }
     }

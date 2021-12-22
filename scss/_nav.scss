@@ -4,8 +4,14 @@
         background-color: $blanco;
         color: $primario;
         img {
-            max-width: 58%;
+            max-width: 100%;
             
         } 
+        .nav_items {
+            font-size: 2rem;
+            margin: 1rem 1rem 1rem 2rem;
+            border-bottom: solid 0.3rem $secundario;
+            
+        }
     }
 }

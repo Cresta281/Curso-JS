@@ -6,14 +6,14 @@ $blanco : #FFFFFF;
     text-decoration: none;
     color: #FFFFFF;
 }
-@mixin botonmobile {
-    width: 90px;
-    height: 30px;
+@mixin boton {
+    width: 7.2rem;
+    height: 5.4rem;
     background-color: $primario;
     color: $secundario;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 1.3rem;
+    line-height: 2rem;
     text-align: center;
     -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 85, 152, 0.3);
             box-shadow: 0px 0px 12px 1px rgba(0, 85, 152, 0.3);

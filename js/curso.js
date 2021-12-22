@@ -23,6 +23,12 @@ const contador_carrito = document.getElementById("contador_carrito")
 
 const precio_total = document.getElementById("precio_total")
 
+const boton_carrito = document.getElementById("boton_carrito")
+
+const esconder_carrito = document.getElementById("esconder_carrito")
+
+let modal_carrito = document.getElementById("modal_carrito")
+
 mostrar_productos(stock_productos)
 
 function mostrar_productos(array){
@@ -106,3 +112,11 @@ function actualizar_carrito(){
     contador_carrito.innerText = carrito_compras.reduce((acc,el)=> acc + el.cantidad, 0 ) 
     precio_total.innerText = carrito_compras.reduce((acc,el)=> acc + (el.precio * el.cantidad), 0) 
 }
+
+boton_carrito.addEventListener("click", () => {
+    modal_carrito.style.display = "block"
+})
+
+esconder_carrito.addEventListener("click", () => {
+    modal_carrito.style.display = "none"
+})

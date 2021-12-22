@@ -1,18 +1,20 @@
+
 .enunciado {
     position: relative;
     img{
     width: 100%;
-    height: 400px;
+    height: 100%;
+    margin: 2rem 0rem 2rem 0rem;
     }
     h1 {
-        font-size: 23px;
+        font-size: 2.5rem;
         position: absolute;
         top: 10%;
         margin: 0px 20px auto;
         color: $blanco;
     }
     span {
-        font-size: 23px;
+        font-size: 2.5rem;
         background-color: $secundario;
         color: $primario;
         a {
@@ -27,7 +29,7 @@
     .preguntas_contenido {
         position: relative;
         span {
-            font-size: 19px;
+            font-size: 2.5rem;
             background-color: $secundario;
             color: $primario;
             position: absolute;
@@ -35,8 +37,8 @@
             left: 7%;
         }
         img {
-            width: 90%;
-            height: 400px;
+            width: 100%;
+            height: 60%;
             margin-top: 1rem;
             margin-left: 1rem;
         }
@@ -45,16 +47,26 @@
 .nosotros {
     display: flex;
     flex-direction: column;
+    width: 70%;
+    margin: 3rem 0rem 3rem 0rem;
     h1 {
-        margin: 1rem 1rem;
+        margin: 2rem 1rem 1rem 1rem;
+        font-size: 2.5rem;
+        span{
+            margin: 0.4rem;
+        }
     }
     p {
         margin: 1rem 1rem;
+        font-size: 1.5rem;
         border-bottom: solid $secundario;
-        border-top: solid $primario;
+        
     }
     button {
-        @include botonmobile;
+        @include boton;
         margin: 1rem 1rem;
+        a {
+            @include links;
+        }
     }
 }
