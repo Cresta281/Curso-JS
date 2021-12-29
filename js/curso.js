@@ -68,6 +68,7 @@ function agregar_al_carrito(combos){
         verificar.cantidad = verificar.cantidad + 1
         document.getElementById(`cantidad${verificar.id}`).innerHTML = `<p id="cantidad${verificar.id}">cantidad:${verificar.cantidad}</p>`
         actualizar_carrito()
+        localStorage.setItem('carrito',JSON.stringify(carrito_compras))
     }else{
         let agregar = stock_productos.find(combo => combo.id == combos)
         carrito_compras.push(agregar)
@@ -90,7 +91,6 @@ function agregar_al_carrito(combos){
                 boton_eliminar.parentElement.remove()
                 carrito_compras = carrito_compras.filter(elemento => elemento.id != agregar.id)
                 actualizar_carrito()
-                localStorage.setItem('carrito',JSON.stringify(carrito_compras))
                 Toastify({
                     text: "Combo eliminado",
                     className: "info",
@@ -98,6 +98,7 @@ function agregar_al_carrito(combos){
                     background: "red",
                     }
                 }).showToast();
+                localStorage.setItem('carrito',JSON.stringify(carrito_compras))
             }else{
                 agregar.cantidad = agregar.cantidad - 1
                 document.getElementById(`cantidad${agregar.id}`).innerHTML += ` <p id="cantidad${agregar.id}">${agregar.cantidad}</p>`
@@ -112,6 +113,19 @@ function actualizar_carrito(){
     contador_carrito.innerText = carrito_compras.reduce((acc,el)=> acc + el.cantidad, 0 ) 
     precio_total.innerText = carrito_compras.reduce((acc,el)=> acc + (el.precio * el.cantidad), 0) 
 }
+
+function recuperar_carrito(){
+    let recuperar_carrito = JSON.parse(localStorage.getItem('carrito'))
+    console.log(recuperar_carrito)
+    if(recuperar_carrito){
+        recuperar_carrito.forEach(el => {
+            mostrar_productos(el)
+            carrito_compras.push(el)
+            actualizar_carrito()
+        })
+    }
+}
+recuperar_carrito()
 
 boton_carrito.addEventListener("click", () => {
     modal_carrito.style.display = "block"
