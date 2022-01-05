@@ -13,11 +13,13 @@ let producto4 = new Productos (4, "Jamón cocido", 200, "img",1 )
 let producto5 = new Productos (5, "Jamón crudo", 300, "img",1 )
 let producto6 = new Productos (6, "Queso gruyere", 200, "img",1 )
 let producto7 = new Productos (7, "Queso fontina", 150, "img",1 )
-let producto8 = new Productos (8, "Salame tandilense", 250, "img",1 )
+let producto8 = new Productos (8, "Salame tandil", 250, "img",1 )
 let producto9 = new Productos (9, "Jamón iberico", 250, "img",1 )
-let producto10 = new Productos (10, "Salame ahumado", 200, "img",1 )
+let producto10 = new Productos (10, "salame especial", 200, "img",1 )
+let producto11 = new Productos (11, "Queso Roquefort", 180, "img", 1)
+let producto12 = new Productos (12, "Leberwurst", 150, "img", 1)
 
-let stock_armar = [ producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10 ]
+let stock_armar = [ producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12 ]
 
 let carrito_compras2 = []
 
@@ -28,7 +30,7 @@ let modal_carrito = document.getElementById("modal_carrito_armar")
 
 function mostrar_stock(productos){
     productos.forEach(producto => {
-        $('#a_a').append(
+        $('#cards_productos').append(
             `
         <div class="col-sm-3">
             <div class="card">
@@ -65,7 +67,7 @@ function agregar_al_carrito(id){
         let agregar = stock_armar.find(producto => producto.id == id)
         carrito_compras2.push(agregar)
         actualizar_carrito()
-        mostrar_carrito()
+        mostrar_carrito(agregar)
         localStorage.setItem('carrito',JSON.stringify(carrito_compras2))
        
     }
@@ -117,13 +119,46 @@ function recuperar_carrito(){
     }
 }
 recuperar_carrito()
+$('#boton_carrito').click(function() {
+    $('#modal_carrito_armar').slideToggle(500)  
+})
 
-$('#boton_carrito').on("click",() => {
-    modal_carrito.style.display = "block"
-    
+let modo_oscuro
+
+if(localStorage.getItem('modo_oscuro')){
+    modo_oscuro = localStorage.getItem('modo_oscuro')
+} else {
+    modo_oscuro = "modo_claro"
+}
+
+localStorage.setItem('modo_oscuro', modo_oscuro)
+
+$ (() => {
+    if(localStorage.getItem('modo_oscuro') == "modo_oscuro") {
+        $('body').addClass('modo_oscuro')
+        $('#foco_oscuro').fadeOut()
+        $('#foco_claro').fadeIn()
+    } else {
+        $('#foco_claro').fadeOut()
+    }
+
+    $('#foco_oscuro').click(()=>{
+        $('#foco_oscuro').fadeOut()
+        $('#foco_claro').fadeIn()
+        $('body').addClass('modo_oscuro')
+
+    })
+    $('#foco_claro').click(()=>{
+        $('#foco_oscuro').fadeIn()
+        $('#foco_claro').fadeOut()
+        $('body').removeClass('modo_oscuro')
+        
+    })
+})
+
+$ (()=>{
+    $('#a_a').hide().delay(4000).fadeIn(1000)
+    $('#parrafo_bienvenida').fadeIn(300).delay(1500).fadeOut(1000)
 })
 
 
-$('#esconder_carrito_armar').on("click",() => {
-    modal_carrito.style.display = "none"
-})

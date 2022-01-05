@@ -1,0 +1,47 @@
+.modo_oscuro {
+    background-color: $primario;
+    color: $primario;
+    .producto_en_carrito {
+        background-color: $blanco;
+        color: $primario;
+        border-radius: 1.5rem;
+        padding: 1rem;
+        margin: 1rem; 
+    }
+    .precio_carrito{
+        background-color: $blanco;
+        color: $primario;
+    }
+    .parrafo_bienvenida{
+        text-align: center;
+        margin: 2rem;
+        font-size: 3rem;
+        color:$blanco;  
+    }
+
+}
+.container {
+    position: relative;
+    .producto_en_carrito {
+        background-color: $primario;
+        color: $blanco;
+        border-radius: 1.5rem;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .cards_productos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .card {
+            margin: 1rem;
+            padding: 1rem;
+        }
+    }
+}
+.parrafo_bienvenida{
+    text-align: center;
+    margin: 2rem;
+    font-size: 3rem;
+    
+}
