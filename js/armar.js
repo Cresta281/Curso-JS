@@ -1,25 +1,5 @@
-function Productos (id,nombre,precio,img, cantidad){
-    this.id = id 
-    this.nombre = nombre
-    this.precio =  precio
-    this.img = img 
-    this.cantidad = cantidad 
-}
 
-let producto1 = new Productos (1, "Almendras", 250, "img",1 )
-let producto2 = new Productos (2, "Maní", 150, "img",1 )
-let producto3 = new Productos (3, "Aceitunas", 120, "img",1 )
-let producto4 = new Productos (4, "Jamón cocido", 200, "img",1 )
-let producto5 = new Productos (5, "Jamón crudo", 300, "img",1 )
-let producto6 = new Productos (6, "Queso gruyere", 200, "img",1 )
-let producto7 = new Productos (7, "Queso fontina", 150, "img",1 )
-let producto8 = new Productos (8, "Salame tandil", 250, "img",1 )
-let producto9 = new Productos (9, "Jamón iberico", 250, "img",1 )
-let producto10 = new Productos (10, "salame especial", 200, "img",1 )
-let producto11 = new Productos (11, "Queso Roquefort", 180, "img", 1)
-let producto12 = new Productos (12, "Leberwurst", 150, "img", 1)
-
-let stock_armar = [ producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10, producto11, producto12 ]
+let stock_armar = []
 
 let carrito_compras2 = []
 
@@ -159,6 +139,25 @@ $ (() => {
 $ (()=>{
     $('#a_a').hide().delay(4000).fadeIn(1000)
     $('#parrafo_bienvenida').fadeIn(300).delay(1500).fadeOut(1000)
+})
+
+$.getJSON('productos/armar.JSON', function (data){
+    console.log(data)
+    data.forEach(elemento => stock_armar.push(elemento))
+    mostrar_stock(stock_armar)
+})
+$('#finalizar').on('click',()=>{
+    $.post('https://jsonplaceholder.typicode.com/posts',JSON.stringify(carrito_compras2),function(data,estado){
+        console.log(data,estado)
+        if(estado){
+            $('#carrito_contenedor').empty()
+            $('#carrito_contenedor').append('<h4> Su pedido se ha realizado exitosamente! en segundos notificaremos su envio </h4>')
+            carrito_compras2 = []
+            localStorage.clear()
+            actualizar_carrito()
+
+        }
+    })
 })
 
 

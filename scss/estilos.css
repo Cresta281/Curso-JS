@@ -143,6 +143,10 @@
   color: #FFFFFF;
 }
 
+.modo_oscuro .carrito_contenedor {
+  color: #FFFFFF;
+}
+
 .container {
   position: relative;
 }
