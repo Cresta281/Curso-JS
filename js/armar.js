@@ -8,6 +8,29 @@ mostrar_stock(stock_armar)
 
 let modal_carrito = document.getElementById("modal_carrito_armar")
 
+$('#pagar').hide()
+$('#parrafo_compra').hide()
+$ (()=>{
+    $('#a_a').hide().delay(4000).fadeIn(1000)
+    $('#parrafo_bienvenida').fadeIn(300).delay(1500).fadeOut(1000)
+})
+
+$('#search').on('change',()=>{
+    let texto = $('#search').val()
+    console.log(texto);
+    let buscar = stock_armar.filter(item => item.nombre.toLowerCase().includes(texto.toLowerCase()))
+    console.log(buscar);
+    mostrar_stock(buscar)
+})
+$('#boton_buscar').trigger('change')
+
+$.getJSON('productos/armar.JSON', function (data){
+    console.log(data)
+    data.forEach(elemento => stock_armar.push(elemento))
+    mostrar_stock(stock_armar)
+    recuperar_carrito()
+})
+
 function mostrar_stock(productos){
     productos.forEach(producto => {
         $('#cards_productos').append(
@@ -36,6 +59,8 @@ function mostrar_stock(productos){
         })
 })
 }
+
+
 function agregar_al_carrito(id){
     let verificar = carrito_compras2.find(producto => producto.id == id)
     if(verificar){
@@ -61,7 +86,7 @@ function mostrar_carrito(agregar){
     $('#carrito_contenedor').append(`
             <div class=producto_en_carrito>
                         <p>${agregar.nombre}</p>
-                        <p>${agregar.precio}</p>
+                        <p>$${agregar.precio}</p>
                         <p id="cantidad${agregar.id}">${agregar.cantidad}</p>
                         <button class="btn btn-danger" id="eliminar${agregar.id}"> Eliminar </button>
             </div>
@@ -135,23 +160,15 @@ $ (() => {
         
     })
 })
-
-$ (()=>{
-    $('#a_a').hide().delay(4000).fadeIn(1000)
-    $('#parrafo_bienvenida').fadeIn(300).delay(1500).fadeOut(1000)
-})
-
-$.getJSON('productos/armar.JSON', function (data){
-    console.log(data)
-    data.forEach(elemento => stock_armar.push(elemento))
-    mostrar_stock(stock_armar)
-})
+//pagar
 $('#finalizar').on('click',()=>{
     $.post('https://jsonplaceholder.typicode.com/posts',JSON.stringify(carrito_compras2),function(data,estado){
         console.log(data,estado)
         if(estado){
             $('#carrito_contenedor').empty()
-            $('#carrito_contenedor').append('<h4> Su pedido se ha realizado exitosamente! en segundos notificaremos su envio </h4>')
+            $('#a_a').hide()
+            $('#pagar').fadeIn(800)
+            $('body').addClass('tarjeta_pago')
             carrito_compras2 = []
             localStorage.clear()
             actualizar_carrito()
@@ -159,5 +176,13 @@ $('#finalizar').on('click',()=>{
         }
     })
 })
+
+$('#boton_pagar').on('click',function(){
+    $('#pagar').empty().fadeOut(200)
+    $('#parrafo_compra').fadeIn(1000).delay(3500).fadeOut(1000)
+    $('#a_a').delay(3000).fadeIn(1800)
+})
+
+
 
 

@@ -3,14 +3,20 @@
     .navbar_container {
         background-color: $blanco;
         color: $primario;
-        img {
-            max-width: 100%;
-            
-        } 
+        .navbar-brand{
+            margin-right: -1rem;
+            width: 30%;
+            img {
+                max-width: 50%;
+                height: 20%;
+                
+            } 
+        }
         .nav_items {
             font-size: 2rem;
             margin: 1rem 1rem 1rem 2rem;
             border-bottom: solid 0.3rem $secundario;
+            cursor: pointer;
             
         }
     }
