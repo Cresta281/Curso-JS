@@ -3,13 +3,11 @@ let stock_armar = []
 
 let carrito_compras2 = []
 
-mostrar_stock(stock_armar)
 
 
-let modal_carrito = document.getElementById("modal_carrito_armar")
+let modal_carrito = document.getElementById("modal_body")
 
 $('#pagar').hide()
-$('#parrafo_compra').hide()
 $ (()=>{
     $('#a_a').hide().delay(4000).fadeIn(1000)
     $('#parrafo_bienvenida').fadeIn(300).delay(1500).fadeOut(1000)
@@ -32,6 +30,7 @@ $.getJSON('productos/armar.JSON', function (data){
 })
 
 function mostrar_stock(productos){
+    $('#cards_productos').empty()
     productos.forEach(producto => {
         $('#cards_productos').append(
             `
@@ -41,7 +40,7 @@ function mostrar_stock(productos){
                 <div class="card-body">
                     <h5 class="card-title">${producto.nombre}</h5>
                     <p class="card-text">$${producto.precio}</p>
-                    <a id="boton${producto.id}" class="btn btn-primary">Agregar al carrito</a>
+                    <a id="boton${producto.id}" class="btn boton_agregar">Agregar al carrito</a>
                 </div>
             </div>
         </div>
@@ -78,12 +77,17 @@ function agregar_al_carrito(id){
     }
 }
 function actualizar_carrito(){
+    if(carrito_compras2.length > 0){
+        $('#modal_footer').show()
+    } else {
+        $('#modal_footer').hide()
+    }
     $('#contador_carrito_armar').text(carrito_compras2.reduce((acc,el)=> acc + el.cantidad, 0 ))
     $('#precio_total_armar').text(carrito_compras2.reduce((acc,el)=> acc + (el.precio * el.cantidad), 0))  
 }
 
 function mostrar_carrito(agregar){
-    $('#carrito_contenedor').append(`
+    $('#modal_body').append(`
             <div class=producto_en_carrito>
                         <p>${agregar.nombre}</p>
                         <p>$${agregar.precio}</p>
@@ -123,10 +127,7 @@ function recuperar_carrito(){
         })
     }
 }
-recuperar_carrito()
-$('#boton_carrito').click(function() {
-    $('#modal_carrito_armar').slideToggle(500)  
-})
+
 
 let modo_oscuro
 
@@ -165,22 +166,28 @@ $('#finalizar').on('click',()=>{
     $.post('https://jsonplaceholder.typicode.com/posts',JSON.stringify(carrito_compras2),function(data,estado){
         console.log(data,estado)
         if(estado){
-            $('#carrito_contenedor').empty()
+            $('.modal-backdrop').remove()
             $('#a_a').hide()
             $('#pagar').fadeIn(800)
             $('body').addClass('tarjeta_pago')
-            carrito_compras2 = []
-            localStorage.clear()
-            actualizar_carrito()
 
         }
     })
 })
 
+
 $('#boton_pagar').on('click',function(){
+    $('#modal_body').empty()
+    $('#modal_body').append(`<p> Muchas gracias por tu compra, en instantes te llegara un comprobante a tu correo electronico!</p>`)
+    $('#modal_footer').hide()
+    carrito_compras2 = []
+    localStorage.clear()
+    actualizar_carrito()
     $('#pagar').empty().fadeOut(200)
-    $('#parrafo_compra').fadeIn(1000).delay(3500).fadeOut(1000)
-    $('#a_a').delay(3000).fadeIn(1800)
+    $('#a_a').delay(600).fadeIn(800)
+    setTimeout(() => {
+        $('#modal_body').empty()
+    }, 4000);
 })
 
 

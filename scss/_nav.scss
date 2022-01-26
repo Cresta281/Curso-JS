@@ -1,23 +1,41 @@
-.navbar {
-    @include links;
-    .navbar_container {
-        background-color: $blanco;
-        color: $primario;
-        .navbar-brand{
-            margin-right: -1rem;
-            width: 30%;
-            img {
-                max-width: 50%;
-                height: 20%;
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    .navbar {
+        @include links;
+        padding-top: 0;
+        .navbar_container {
+            background-color: $blanco;
+            color: $primario;
+            .navbar-brand{
+                margin-right: -1rem;
+                width: 30%;
+                img {
+                    max-width: 50%;
+                    height: 20%;
+                    
+                } 
+            }
+            .nav_items {
+                font-size: 2rem;
+                margin: 1rem 1rem 1rem 2rem;
+                border-bottom: solid 0.3rem $secundario;
+                cursor: pointer;
+                .boton_carrito_nav{
+                    text-decoration: none;
+                    border: none;
+                    background-color: $blanco;
+                    .badge_carrito {
+                        height: 30px;
+                        width: 40%;
+                        background-color: $secundario;
+                        color: $blanco;
+                        font-size: 1rem;
+                    }
+                }
                 
-            } 
-        }
-        .nav_items {
-            font-size: 2rem;
-            margin: 1rem 1rem 1rem 2rem;
-            border-bottom: solid 0.3rem $secundario;
-            cursor: pointer;
-            
+            }
         }
     }
 }

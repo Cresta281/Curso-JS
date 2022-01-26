@@ -16,8 +16,8 @@
         <title>Qualitá Market</title>
     </head>
     <body>
-        <header>
-          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header class="header">
+          <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid navbar_container">
               <a class="navbar-brand" href="index.html"><img class="navbar_image" src="img/logo-qualita.jpeg"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +35,9 @@
                     <a class="nav-link">Eventos</a>
                   </li>
                   <li class="nav_items">
+                    <button  class="boton_carrito_nav" data-bs-toggle="modal" data-bs-target="#carrito_compras"><i class="fas fa-shopping-cart"></i><span id="contador_carrito_armar" class="badge badge_carrito"></span></button>
+                  </li>
+                  <li class="nav_items">
                     <a><i id="foco_oscuro" class="fa-solid fa-lightbulb"></i></a>
                   </li>
                   <li class="nav_items">
@@ -49,7 +52,6 @@
     <main id="a_a" class="container">
         <div class="row">
             <div class="carrito">
-              <button class="btn btn-warning boton_carrito" id="boton_carrito">Carrito<span id="contador_carrito_armar" class="badge bg-dark"></span></button>
               <div class="search">
                 <div class="search_box">
                   <input type="text" class="search_term" id="search" placeholder="Buscar">
@@ -58,28 +60,35 @@
                   </button>
                 </div>
             </div>
-            <div class="modal_contenedor">
-            <div class="modal_carrito" id="modal_carrito_armar">
-                <p class="precio_carrito">Precio total: $ <span id="precio_total_armar" class="precio_total_armar"></span></p>
-                <div id="notificacion_carrito">
-    
-                </div>
-                <div id="carrito_contenedor" class="carrito_contenedor">
-                  <button class="btn btn-primary finalizar" id="finalizar"> Finalizar compra </button>
-                
-                </div>
-            </div>
-            </div>
         </div>
         <div class="cards_productos" id="cards_productos">
 
         </div>
+        <!--MODAL CARRITO-->
+        <div class="modal fade" id="carrito_compras" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content" id="modal_content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Su carrito</h5>
+                <button type="button" class="close btn btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="modal_body">
+                Sus productos:
+              </div>
+              <div class="modal-footer" id="modal_footer">
+                <p class="precio_carrito">Precio total: $ <span id="precio_total_armar" class="precio_total_armar"></span></p>
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Seguir comprando</button>
+                <button type="button" class="btn btn-primary" id="finalizar">Finalizar compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </main>
       <div class="parrafo_bienvenida" id="parrafo_bienvenida">
         <p>Arma tu propia picada eligiendo tus productos favoritos</p>
-      </div>
-      <div class="parrafo_compra" id="parrafo_compra">
-        <p>Muchas gracias por tu compra! en instantes estarás recibiendo un comprobante a tu correo electrónico</p>
       </div>
     <!--FORMA DE PAGO-->
       <div class="wrapper">

@@ -47,6 +47,20 @@
             background-color: $primario;
         }
     }
+    .container {
+        .carrito {
+            .search {
+                .search_box {
+                    .boton_buscar {
+                        background-color: $blanco;
+                        .fa {
+                            color: $secundario;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }
 .container {
@@ -58,11 +72,11 @@
         .search{
             position: absolute;
             top: 50%;
-            left: 40%;
+            left: 30%;
             .search_box{
                 position: relative;
                 .search_term{
-                    width: 250px;
+                    width: 400px;
                     border: 0;
                     height: 60px;
                     padding: 0px 35px;
@@ -73,10 +87,11 @@
                     font-size: 1rem;
                     font-weight: bold;
                     transition: all 0.5s linear;
+                    margin-top: 1.5rem;
                 }
                 .boton_buscar{
                     position: absolute;
-                    top: 0%;
+                    top: 20%;
                     left: 85%;
                     background: $primario;
                     width: 4rem;
@@ -114,32 +129,34 @@
             padding: 1rem;
             max-height: 300px;
             min-height: 100px;
+            box-shadow: 0 0 5px 1px $secundario;
+            .boton_agregar{
+                background-color: $primario;
+                color: $blanco;
+                &:hover {
+                    color:  $blanco;
+                    background-color: $secundario;
+                }
+            }
             img{
                 max-width: 50%;
                 max-height: 100px;
             }
         }
     }
-    .modal_carrito{
-        .precio_carrito{
-            background-color:$primario;
-            color: $blanco;
-            border: none;
-            border-radius: 0.5rem;
-            margin-bottom: -0.2rem;
-        }
+    .modal_body {
+        border-radius: 1.5rem;        
     }
+    .modal_footer {
+        display: none;
+    }
+    
 }
 .parrafo_bienvenida{
     text-align: center;
     margin: 2rem;
     font-size: 3rem;
     
-}
-.parrafo_compra{
-    text-align: center;
-    margin: 2rem auto;
-    font-size: 3rem;
 }
 .carrito_contenedor{
     .finalizar{
