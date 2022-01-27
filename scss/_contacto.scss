@@ -1,0 +1,161 @@
+body {
+    background-color: $blanco;
+    .header_nosotros {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin: 5rem 2rem 2rem 10rem;
+        border-bottom: solid $primario;
+        width: 60%;
+    }
+    .nosotros {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 2rem 6rem;
+        align-items: center;
+        p {
+            font-size: 1.5rem;
+            margin-left: 4rem;
+            border: none;
+            
+        }
+        img {
+            max-height: 500px;
+            max-width: 700px;
+            border-radius: 1rem;
+            box-shadow: 4px 4px 2px rgba(254,236,164,1);
+        }
+    }
+    .nosotros_2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 4rem 6rem;
+        align-items: center;
+        p {
+            font-size: 1.5rem;
+            margin-left: 4rem;
+            border: none;
+            span {
+                background: $secundario;
+                color: $blanco;
+            }
+            
+        }
+        img {
+            max-height: 500px;
+            max-width: 700px;
+            border-radius: 1rem;
+            box-shadow: 4px 4px 2px rgba(254,236,164,1);
+        }
+    }
+    .eventus {
+        position: relative;
+        margin-bottom: 200px;
+        .contactenos {
+            border: 0;
+            position: absolute;
+            bottom: 15%;
+            right: 15%;
+            padding: 1rem;
+            width: 20%;
+            background-color: $primario;
+            color: $blanco;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            cursor: pointer;
+            box-shadow: 4px 4px 2px rgba(254,236,164,1);
+        }
+    }
+    .wrapper_contacto {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 550px;
+        width: 100%;
+        background-color: $secundario;
+        padding: 0.5rem;
+        border-radius: 1.5rem;
+        color: $blanco;
+        box-shadow: 4px 4px 2px rgba(254,236,164,1);
+        display: none;
+        z-index: 2;
+        .header_contacto {
+            display: flex;
+            justify-content: space-evenly;
+            position: relative;
+            margin-top: 10px;  
+            button{
+                background: none;
+                border: none;
+                .fas {
+                    font-size: 2.5rem;
+                    position: absolute;
+                    right: 6%;
+                    top: 0%;
+                }
+            }
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: $blanco;
+        }
+        .input_field {
+            margin-bottom: 10px;
+            input,textarea {
+                width: 100%;
+                border: 1px solid $primario;
+                padding: 1rem;
+            }
+            textarea {
+                height: 180px;
+                resize: none;
+            }   
+        }
+        .submit {
+            input {
+                border: 0;
+                margin-top: 10px;
+                padding: 1rem;
+                width: 100%;
+                background-color: $primario;
+                color: $blanco;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                cursor: pointer;
+                &:hover{
+                    color: $primario;
+                    background-color: $blanco;
+                }
+            }
+        }
+        .error {
+            margin-bottom: 20px;
+            padding: 0;
+            background-color: $primario;
+            text-align: center;
+            font-size: 23px;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+.modo_oscuro {
+    background: $primario;
+    .eventus{
+        .contactenos {
+            background: $secundario;
+        }
+    }
+    h2{
+        color: $secundario;
+        border-bottom: solid 1px $blanco;
+    }
+    p {
+        color: $blanco;
+    }
+}

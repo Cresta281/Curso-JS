@@ -44,3 +44,26 @@
         }
     }
 }
+.modo_oscuro{
+   border: $blanco;
+    .footer_logo {
+        a {
+            color: $primario;
+        }
+    }
+    .footer_logo_abajo {
+        a {
+            color: $primario;
+        }
+    }
+    .footer_redes {
+        .footer_redes_svc {
+            background: $primario;
+        }
+    }
+    .footer_info {
+        h2 {
+            color: $primario;
+        }
+    }
+}

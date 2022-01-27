@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="scss/estilos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Rubik:wght@400;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script src="https://kit.fontawesome.com/d00af8a496.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>Qualitá Market</title>
+    </head>
+    <body>
+        <header class="header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid navbar_container">
+              <a class="navbar-brand" href="index.html"><img class="navbar_image" src="img/logo-qualita.jpeg"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav_items">
+                    <a class="nav-link" href="productos.html">Productos</a>
+                  </li>
+                  <li class="nav_items">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                  </li>
+                  <li class="nav_items">
+                    <a class="nav-link">Eventos</a>
+                  </li>
+                  <li class="nav_items">
+                    <a><i id="foco_oscuro" class="fa-solid fa-lightbulb"></i></a>
+                  </li>
+                  <li class="nav_items">
+                    <a><i id="foco_claro" class="fa-regular fa-lightbulb"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <!--MAIN-->
+    <main id="contacto_main" class="contacto_main">
+        <h2 class="header_nosotros">Quienes somos nosotros?</h2>
+        <div class="nosotros">
+          <p> Somos un emprendimiento familiar, enfocado plenamente en brindar la mejor calidad de productos a la mesa de tu casa.</p>
+          <img src="img/servir.jpg">
+        </div>
+        <div class="nosotros_2">
+          <img src="img/carniceria.jpg">
+          <p>Directamente desde Tandil, comenzamos por 2015 a pensar, repensar y formular en ideas concretas que tipo de producto queriamos vender. Por lo que pensamos en lo que mas nos identifica. <span>La picada!</span> </p>
+        </div>
+        <h2 class="header_nosotros">Nuevos horizontes...</h2>
+        <div class="nosotros_2">
+          <img src="img/reunion.jpg">
+          <p>Para este año comenzamos a proyectar la idea de tener nuestros productos de primera calidad en tu propio evento o oficina! con la frecuencia o cantidad que quieras. Animate a ser parte de este nuevo proyecto</p>
+        </div>
+        <div class="eventus">
+          <button class="contactenos" id="contactenos">Organiza tu evento</button>
+        </div>
+        <div class="wrapper_contacto" id="wrapper_contacto">
+          <div class="header_contacto">
+            <h2>Contactenos</h2>
+            <button id="cerrar_contacto"><i class="fas fa-window-close"></i></button>
+          </div>
+          <div id="error" class="error"></div>
+
+          <form id="miformulario">
+            <div class="input_field">
+              <input type="text" placeholder="nombre" id="nombre">
+            </div>
+            <div class="input_field">
+              <input type="text" placeholder="evento" id="evento">
+            </div>
+            <div class="input_field">
+              <input type="text" placeholder="telefono" id="telefono">
+            </div>
+            <div class="input_field">
+              <input type="email" placeholder="email" id="email">
+            </div>
+            <div class="input_field">
+              <textarea placeholder="mensaje" id="mensaje"></textarea>
+            </div>
+            <div class="submit" id="submit">
+              <input type="submit">
+            </div>
+          </form>
+        </div>
+        
+        
+      </main>
+      <footer class="footer"> <!--FOOTER-->
+        <div class="footer_logo">
+          <a href="index.html"> <img src="/img/logo-qualita.jpeg"></a>
+          <a href=>Armar</a>
+          <a href=>Combos</a>
+        </div>
+        <div class="footer_logo_abajo">
+          <a href=>Eventos</a>
+          <a href=>Contacto</a>
+        </div>
+        <div class="footer_redes">
+          <img class="footer_redes_svc"src="/img/footer-facebook.svg">
+          <img class="footer_redes_svc" src="/img/footer-twitter.svg">
+          <img class="footer_redes_svc" src="/img/footer-instagram.svg">
+        </div>
+        <div class="footer_info">
+          <h2>Copyright © 2021. <span>Qualitá</span><br>Todos los derechos reservados.</h2>
+        </div>
+      </footer>
+      
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script src= "js/contacto.js"></script>
+    </body>
+</html>
