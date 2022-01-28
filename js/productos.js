@@ -9,7 +9,7 @@ let modal_carrito = document.getElementById("modal_body")
 
 $('#pagar').hide()
 $ (()=>{
-    $('#a_a').hide().delay(4000).fadeIn(1000)
+    $('#a_a').hide().delay(3000).fadeIn(1000)
     $('#parrafo_bienvenida').fadeIn(300).delay(1500).fadeOut(1000)
 })
 
@@ -22,7 +22,7 @@ $('#search').on('change',()=>{
 })
 $('#boton_buscar').trigger('change')
 
-$.getJSON('productos/armar.JSON', function (data){
+$.getJSON('JSON/armar.JSON', function (data){
     console.log(data)
     data.forEach(elemento => stock_armar.push(elemento))
     mostrar_stock(stock_armar)
@@ -185,7 +185,7 @@ $('#boton_pagar').on('click',function(){
     $('#modal_body').append(`<p> Muchas gracias por tu compra, en instantes te llegara un comprobante a tu correo electronico!</p>`)
     $('#modal_footer').hide()
     carrito_compras2 = []
-    localStorage.clear()
+    localStorage.removeItem('carrito')
     actualizar_carrito()
     $('#pagar').empty().fadeOut(200)
     $('#a_a').delay(600).fadeIn(800)

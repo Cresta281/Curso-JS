@@ -1,0 +1,308 @@
+.body_review {
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background: $blanco;
+    .container1 {
+        h1 {
+            width: 100%;
+            font-size: 2rem;
+            color: $primario;
+            letter-spacing: 0.7rem;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 3rem 0 3rem 0;
+            span {
+                background: $primario;
+                color: $secundario;
+                letter-spacing: 0.5rem;
+            }
+        }
+        .comentarios {
+            position: relative;
+            .texto_comentarios {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                margin: 7rem 6rem;
+                align-items: center;
+                width: 40%;
+                p {
+                    font-size: 1.5rem;
+                    margin-left: 4rem;
+                    border: none;
+                    padding: 1.5rem;
+                }
+            }
+            .foto_comentarios {
+                margin: 2rem 2rem;
+                position: absolute;
+                top: 0; 
+                right: 10%;
+                img {
+                    max-height: 300px;
+                    max-width: 400px;
+                    border-radius: 1rem;
+                    box-shadow: 4px 4px 2px rgba(254,236,164,1);
+                }
+            }
+            .flecha {
+                margin-top: 300px;
+                .fas {
+                    position: absolute;
+                    top: 35%;
+                    left: 47%;
+                    font-size: 7rem;
+
+
+    
+                }
+            }
+            .cajas_comentarios {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+                .cajas {
+                    background: $primario;
+                    color: $blanco;
+                    margin: 2rem 2rem;
+                    max-width: 400px;
+                    border: 2px solid $blanco;
+                    border-radius: 1.5rem;
+                    box-shadow: 4px 4px 2px rgba(254,236,164,1);
+                    .fas {
+                        color: $secundario;
+                        text-shadow: 0 0 20px #952;
+                        letter-spacing: 1rem;
+                        margin: 2rem 0 2rem 0;
+                        font-size: 1.7rem;
+
+                    }
+                    .cajas_texto {
+                        margin: 0rem 0 2rem 0;
+                        padding: 1.5rem;
+                        h3 {
+                            font-size: 1.2rem;
+                            text-decoration: underline;
+                            text-transform: uppercase;
+                        }
+                        h4 {
+                            font-size: 1rem;
+                            color: $secundario;
+                            margin-top: 2rem;
+                        }
+                    }
+                    .cajas_mensaje {
+                        padding: 1rem;
+                        margin: -1rem 1.5rem 1rem 1.5rem;
+                    }
+                }
+            }
+        }
+        .resena {
+            h2 {
+                width: 100%;
+                font-size: 2rem;
+                color: $primario;
+                letter-spacing: 0.7rem;
+                text-transform: uppercase;
+                text-align: center;
+                margin: 3rem 0 3rem 0;
+                span {
+                    background: $primario;
+                    color: $secundario;
+                    letter-spacing: 0.5rem;
+                }
+            }
+            .resena_boton {
+                border: 0;
+                padding: 1rem;
+                width: 20%;
+                background-color: $primario;
+                color: $blanco;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                cursor: pointer;
+                box-shadow: 4px 4px 2px rgba(254,236,164,1);
+                margin: 2rem 0; 
+            }
+        }
+    }
+    .container2 {
+        display: none;
+        margin: 2rem 0 2rem 580px;
+        transition: all 0.5s ease;
+        .container_comentarios {
+            width: 500px;
+            background: $primario;
+            padding: 1rem 1.5rem;
+            border: 1px solid $blanco;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            .posteo {
+                display: none;
+                .posteo_texto {
+                    font-size: 1.2rem;
+                    color: $blanco;
+                    font-weight: 250;
+                    letter-spacing: 1px;
+                }
+                .posteo_editar {
+                    position: absolute;
+                    right: 10px;
+                    top: 9%;
+                    font-size: 0.8rem;
+                    color: $secundario;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .estrellita {
+                input {
+                    display: none;
+                    &:checked ~ label {
+                        color: $secundario;
+                    }
+                    &:checked ~ form {
+                        display: block;
+                    }
+                }
+                label {
+                    font-size: 2rem;
+                    color: $blanco;
+                    padding: 0.75rem;
+                    float: right;
+                    transition: all 0.3s ease;
+                    &:hover ~ label{
+                        color: $secundario;
+                    }
+                }
+                #cerrar {
+                    font-size: 1.6rem;
+                    color: $blanco;
+                    position: absolute;
+                    top: 8%;
+                    left: 4%;
+                    cursor: pointer;
+                    &:hover {
+                        color: $error;
+                    }
+                }
+                input#rate-5 {
+                    &:checked ~ label {
+                        text-shadow: 0 0 20px #952;
+                    }
+                }
+                #rate-1 {
+                    &:checked ~ form h1 {
+                        &:before {
+                            content: "Lo odie";
+                        }
+                    }
+                } 
+                #rate-2 {
+                    &:checked ~ form h1 {
+                        &:before {
+                            content: "No me gusta";
+                        }
+                    }
+                } 
+                #rate-3 {
+                    &:checked ~ form h1 {
+                        &:before {
+                            content: "Me gusta";
+                        }
+                    }
+                } 
+                #rate-4 {
+                    &:checked ~ form h1 {
+                        &:before {
+                            content: "Me gusta mucho";
+                        }
+                    }
+                } 
+                #rate-5 {
+                    &:checked ~ form h1 {
+                        &:before {
+                            content: "Me encanta";
+                        }
+                    }
+                } 
+                form {
+                    display: none;
+                    h1 {
+                        width: 100%;
+                        font-size: 1.5rem;
+                        color: $secundario;
+                        font-weight: 450;
+                        margin: 0.2rem 0 0.8rem 0;
+                        text-align: center;
+                        transition: all 0.2s ease;
+                    }
+                    .textarea {
+                        height: 100px;
+                        width: 100%;
+                        overflow: hidden;
+                        textarea {
+                            height: 100%;
+                            width: 100%;
+                            outline: none;
+                            border: 1px solid $blanco;
+                            background: $primario;
+                            color: $blanco;
+                            padding: 0.5rem;
+                            font-size: 1rem;
+                            resize: none;
+                        }
+                    }
+                    .boton_comentarios {
+                        height: 2rem;
+                        width: 100%;
+                        margin: 0.5rem 0;
+                        button {
+                            height: 100%;
+                            width: 100%;
+                            border: 1px solid $primario;
+                            outline: none;
+                            background: $blanco;
+                            color: $secundario;
+                            font-weight: 450;
+                            font-size: 1rem;
+                            letter-spacing: 0.1rem;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+} 
+.modo_oscuro {
+    background: $primario;
+    .container1 {
+        h1 {
+            color: $blanco;
+        }
+        .flecha {
+            color: $blanco;
+        }
+        .resena {
+            h2 {
+                color: $blanco;
+            }
+            .resena_boton {
+                background: $blanco;
+                color: $primario;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+.container_index {
+    h1 {
+        width: 100%;
+        font-size: 2rem;
+        color: $primario;
+        letter-spacing: 0.7rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 3rem 0 3rem 0;
+        span {
+            background: $primario;
+            color: $secundario;
+            letter-spacing: 0.5rem;
+        }
+    }
+    .index {
+        position: relative;
+        .texto_index {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin: 7rem 6rem;
+            align-items: center;
+            width: 60%;
+            p {
+                font-size: 2rem;
+                margin: 1rem 4rem;
+                border: none;
+                padding: 1.5rem;
+            }
+            img {
+                max-height: 500px;
+                max-width: 800px;
+                border-radius: 1rem;
+                box-shadow: 4px 4px 2px rgba(254,236,164,1);
+            }
+        }
+        .texto_index2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            margin: 7rem 6rem 7rem 9rem;
+            align-items: center;
+            width: 60%;
+            p {
+                font-size: 2rem;
+                margin: 1rem 4rem;
+                border: none;
+                padding: 1.5rem;
+                cursor: pointer;
+                &:hover {
+                    background: $primario;
+                    a {
+                        color: $blanco;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    color: $primario;
+                }
+            }
+            img {
+                max-height: 400px;
+                max-width: 400px;
+                border-radius: 1rem;
+                box-shadow: 4px 4px 2px rgba(254,236,164,1);
+            }
+        }
+    }
+}
+
+.modo_oscuro {
+    .container_index {
+        h1 {
+            color: $blanco;
+        }
+        
+        .index {
+            .texto_index2 {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin: 7rem 6rem 7rem 9rem;
+                align-items: center;
+                width: 60%;
+                p {
+                    font-size: 2rem;
+                    margin: 1rem 4rem;
+                    border: none;
+                    padding: 1.5rem;
+                    cursor: pointer;
+                    &:hover {
+                        background: $secundario;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $blanco;
+                        &:hover {
+                            color: $blanco; 
+                        }
+                    }
+                }
+                img {
+                    max-height: 400px;
+                    max-width: 400px;
+                    border-radius: 1rem;
+                    box-shadow: 4px 4px 2px rgba(254,236,164,1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+[
+    {
+        "id": 1,
+        "nombre": "Almendras",
+        "precio": 250,
+        "img": "/img/almendras.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Maní",
+        "precio": 150,
+        "img": "/img/mani.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 3,
+        "nombre": "Aceitunas",
+        "precio": 120,
+        "img": "/img/aceitunas.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 4,
+        "nombre": "Jamón cocido",
+        "precio": 200,
+        "img": "/img/jamon_cocido.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 5,
+        "nombre": "Jamón crudo",
+        "precio": 300,
+        "img": "/img/jamon_crudo.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 6,
+        "nombre": "Queso gruyére",
+        "precio": 200,
+        "img": "/img/queso_gruyere.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 7,
+        "nombre": "Queso fontina",
+        "precio": 150,
+        "img": "/img/queso_fontina.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 8,
+        "nombre": "Salame tandil",
+        "precio": 250,
+        "img": "/img/salame_tandil.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 9,
+        "nombre": "Jamón ibérico",
+        "precio": 250,
+        "img": "/img/jamon_iberico.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 10,
+        "nombre": "Salame especial",
+        "precio": 200,
+        "img": "/img/salame_especial.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 11,
+        "nombre": "Queso roquefort",
+        "precio": 180,
+        "img": "/img/queso_roquefort.jpg",
+        "cantidad": 1
+    },
+    {
+        "id": 12,
+        "nombre": "Leberwust",
+        "precio": 150,
+        "img": "/img/leberwust.jpg",
+        "cantidad": 1
+    }
+
+]

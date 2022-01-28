@@ -14,6 +14,8 @@ cerrar.addEventListener("click",function(){
 evento.addEventListener("click",function(){
     contacto.style.display = "block"
 })
+
+array_contacto = []
 submit.addEventListener("click",function(){
     var nombre = document.getElementById("nombre").value
     var evento = document.getElementById("evento").value
@@ -44,15 +46,25 @@ submit.addEventListener("click",function(){
         error.innerHTML = texto;
         return false
     }
-    if(mensaje.length <= 100){
-        texto = "Por favor ingrese mas de 100 caracteres"
+    if(mensaje.length <= 10){
+        texto = "Por favor ingrese mas de 10 caracteres"
         error.innerHTML = texto;
         return false
     }
     else{
         texto = "Se han registrado sus datos correctamente"
         error.innerHTML = texto;
+        array_contacto.push(nombre,evento,telefono,email,mensaje)
+        localStorage.setItem('contacto',JSON.stringify(array_contacto))
+        Toastify({
+            text: "Tarjeta enviada",
+            className: "info",
+            style: {
+              background: "green",
+            }
+          }).showToast();
         return true
+
     }
 
 })

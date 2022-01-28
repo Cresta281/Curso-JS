@@ -68,10 +68,7 @@ body {
         }
     }
     .wrapper_contacto {
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin: 2rem 0 2rem 500px;
         max-width: 550px;
         width: 100%;
         background-color: $secundario;
@@ -80,7 +77,8 @@ body {
         color: $blanco;
         box-shadow: 4px 4px 2px rgba(254,236,164,1);
         display: none;
-        z-index: 2;
+        z-index: 3;
+        transition: all 0.4s ease;
         .header_contacto {
             display: flex;
             justify-content: space-evenly;

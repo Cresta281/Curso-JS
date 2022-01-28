@@ -32,7 +32,7 @@
                     <a class="nav-link" href="contacto.html">Contacto</a>
                   </li>
                   <li class="nav_items">
-                    <a class="nav-link">Eventos</a>
+                    <a class="nav-link" href="comentarios.html">Reseñas</a>
                   </li>
                   <li class="nav_items">
                     <a><i id="foco_oscuro" class="fa-solid fa-lightbulb"></i></a>
@@ -47,73 +47,76 @@
         </header>
         <!--MAIN-->
     <main id="contacto_main" class="contacto_main">
-        <h2 class="header_nosotros">Quienes somos nosotros?</h2>
+        <h2 class="header_nosotros">Quiénes somos nosotros?</h2>
         <div class="nosotros">
           <p> Somos un emprendimiento familiar, enfocado plenamente en brindar la mejor calidad de productos a la mesa de tu casa.</p>
           <img src="img/servir.jpg">
         </div>
         <div class="nosotros_2">
           <img src="img/carniceria.jpg">
-          <p>Directamente desde Tandil, comenzamos por 2015 a pensar, repensar y formular en ideas concretas que tipo de producto queriamos vender. Por lo que pensamos en lo que mas nos identifica. <span>La picada!</span> </p>
+          <p>Proveniente de Tandil, comenzamos por 2015 a pensar, edificar y formular en ideas concretas que tipo de producto queriamos vender. Por lo que optamos en lo que mas nos identifica... <span>La picada!</span> </p>
         </div>
         <h2 class="header_nosotros">Nuevos horizontes...</h2>
         <div class="nosotros_2">
           <img src="img/reunion.jpg">
-          <p>Para este año comenzamos a proyectar la idea de tener nuestros productos de primera calidad en tu propio evento o oficina! con la frecuencia o cantidad que quieras. Animate a ser parte de este nuevo proyecto</p>
-        </div>
-        <div class="eventus">
-          <button class="contactenos" id="contactenos">Organiza tu evento</button>
-        </div>
-        <div class="wrapper_contacto" id="wrapper_contacto">
-          <div class="header_contacto">
-            <h2>Contactenos</h2>
-            <button id="cerrar_contacto"><i class="fas fa-window-close"></i></button>
-          </div>
-          <div id="error" class="error"></div>
-
-          <form id="miformulario">
-            <div class="input_field">
-              <input type="text" placeholder="nombre" id="nombre">
-            </div>
-            <div class="input_field">
-              <input type="text" placeholder="evento" id="evento">
-            </div>
-            <div class="input_field">
-              <input type="text" placeholder="telefono" id="telefono">
-            </div>
-            <div class="input_field">
-              <input type="email" placeholder="email" id="email">
-            </div>
-            <div class="input_field">
-              <textarea placeholder="mensaje" id="mensaje"></textarea>
-            </div>
-            <div class="submit" id="submit">
-              <input type="submit">
-            </div>
-          </form>
+          <p>Para este año comenzamos a proyectar la idea de tener nuestros productos de primera calidad en tu propio evento o oficina! <br> Anímate a ser parte de este nuevo proyecto</p>
         </div>
         
         
       </main>
-      <footer class="footer"> <!--FOOTER-->
-        <div class="footer_logo">
-          <a href="index.html"> <img src="/img/logo-qualita.jpeg"></a>
-          <a href=>Armar</a>
-          <a href=>Combos</a>
+      <div class="eventus">
+        <button class="contactenos" id="contactenos">Organizá tu evento</button>
+      </div>
+      <div class="wrapper_contacto" id="wrapper_contacto">
+        <div class="header_contacto">
+          <h2>Contáctenos</h2>
+          <button id="cerrar_contacto"><i class="fas fa-window-close"></i></button>
         </div>
-        <div class="footer_logo_abajo">
-          <a href=>Eventos</a>
-          <a href=>Contacto</a>
+        <div id="error" class="error"></div>
+
+        <form id="miformulario">
+          <div class="input_field">
+            <input type="text" placeholder="nombre" id="nombre">
+          </div>
+          <div class="input_field">
+            <input type="text" placeholder="evento" id="evento">
+          </div>
+          <div class="input_field">
+            <input type="text" placeholder="telefono" id="telefono">
+          </div>
+          <div class="input_field">
+            <input type="email" placeholder="email" id="email">
+          </div>
+          <div class="input_field">
+            <textarea placeholder="mensaje" id="mensaje"></textarea>
+          </div>
+          <div class="submit" id="submit">
+            <input type="submit">
+          </div>
+        </form>
+      </div>
+      <footer>
+        <div class="container_footer">
+            <ul class="flex-row">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="comentarios.html">Reseñas</a></li>
+            </ul>
+            <ul class="flex-row2">
+                <li>
+                    <i class="fab fa-twitter"></i>
+                </li>
+                <li>
+                    <i class="fab fa-instagram"></i>
+                </li>
+                <li>
+                    <i class="fab fa-facebook"></i>
+                </li>
+            </ul>
+            <p>&copy; 2022 todos los derechos reservados <span>Qualitá</span></p>
         </div>
-        <div class="footer_redes">
-          <img class="footer_redes_svc"src="/img/footer-facebook.svg">
-          <img class="footer_redes_svc" src="/img/footer-twitter.svg">
-          <img class="footer_redes_svc" src="/img/footer-instagram.svg">
-        </div>
-        <div class="footer_info">
-          <h2>Copyright © 2021. <span>Qualitá</span><br>Todos los derechos reservados.</h2>
-        </div>
-      </footer>
+    </footer>
       
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
