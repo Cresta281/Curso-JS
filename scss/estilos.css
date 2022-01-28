@@ -743,6 +743,7 @@ body .wrapper_contacto .error {
   top: 35%;
   left: 47%;
   font-size: 7rem;
+  cursor: pointer;
 }
 
 .body_review .container1 .comentarios .cajas_comentarios {

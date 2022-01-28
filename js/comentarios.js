@@ -6,7 +6,11 @@ const boton_comentar = document.getElementById("resena_boton")
 const resena = document.getElementById("container2")
 const cerrar = document.getElementById("cerrar")
 
-
+$('#flecha').click(function(){
+    $('html, body').animate({
+        scrollTop: $("#resena").offset().top -800
+    }, 900);
+})
 
 
 boton_comentar.onclick = () =>{
